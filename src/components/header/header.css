@@ -1,0 +1,32 @@
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.carousel-item.active {
+  background-image: url("../../assets/images/estera_separadora_entulho_geresol_P-10G.jpg");
+  background-color: #201350;
+  background-blend-mode: multiply;
+  filter: brightness(140%);
+}
+
+.carousel-caption {
+  width: 400px !important;
+  top: 50% !important;
+  left: 50% !important;
+  margin: -70px 0 0 -200px !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+@media (max-width: 575.98px) {
+  .carousel-caption {
+    width: 240px !important;
+    margin: -100px 0 0 -120px !important;
+  }
+}
