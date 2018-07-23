@@ -21,6 +21,14 @@
   margin: -70px 0 0 -200px !important;
   right: 0 !important;
   bottom: 0 !important;
+  background-color: #ffffff !important;
+  opacity: 0.8;
+}
+
+.carousel-caption h1,
+h3 {
+  color: #170e34 !important;
+  /*opacity: 0.4;*/
 }
 
 @media (max-width: 575.98px) {
