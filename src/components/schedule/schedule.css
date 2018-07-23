@@ -1,0 +1,23 @@
+.half-screen{
+    margin-top: 10%;
+    /*position: fixed;*/
+    /*width: 70%;*/
+    /*left:30%;*/
+    /*z-index: 1;*/
+    /*top: 0;*/
+    /*overflow-x: hidden;*/
+    /*padding-top: 20px;*/
+}
+
+.form-group{
+    width: 40%;
+}
+
+.form-group h1{
+    color: #201350 !important;
+}
+
+.form-group label{
+    padding-right: 5px;
+    font-weight: bold;
+}
