@@ -15,6 +15,14 @@ export default class ScheduleComponent extends Component {
       typeValue: ''
     };
 
+
+    const typeOfRubble={
+      TYPEA: 'Classe A: Alvenarias, concreto, argamassas e solos - podem ser reutilizados na forma de agregados',
+      TYPEB: 'Classe B: Restos de madeira, metal, plástico, papel, papelão, gesso, vidros - podem ser reutilizados no próprio canteiro de obra ou encaminhados para reciclagem',
+      TYPEC: 'Classe C: Classe C: Resíduos sem tecnologia para reciclagem',
+      TYPED: 'Classe D: Resíduos perigosos, tais como tintas, solventes, óleos e outros, ou aqueles contaminados oriundos de obras em clínicas radiológicas, hospitais, instalações, industriais, etc.'
+    };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
