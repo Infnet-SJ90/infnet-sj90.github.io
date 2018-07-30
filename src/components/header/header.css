@@ -15,21 +15,12 @@
 }
 
 .carousel-caption {
-  height: 60% !important;
-  width: 50% !important;
+  width: 400px !important;
   top: 50% !important;
   left: 50% !important;
-  margin: -12% 0 0 -20% !important;
+  margin: -70px 0 0 -200px !important;
   right: 0 !important;
   bottom: 0 !important;
-  background-color: #ffffffd4 !important;
-  border-radius: 15px;
-}
-
-.carousel-caption h1,
-h3 {
-  color: #170e34 !important;
-  /*opacity: 0.4;*/
 }
 
 @media (max-width: 575.98px) {

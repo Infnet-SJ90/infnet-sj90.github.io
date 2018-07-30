@@ -1,0 +1,16 @@
+.half-screen {
+  margin-top: 10%;
+}
+
+.form-group {
+  width: 40%;
+}
+
+.form-group h1 {
+  color: #201350 !important;
+}
+
+.form-group label {
+  padding-right: 5px;
+  font-weight: bold;
+}

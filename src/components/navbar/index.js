@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Logo from '../../assets/images/logo.png';
 import Nav from '../nav';
+import NavLink from '../nav-link';
 import {
   Navbar,
   Container,
@@ -24,7 +25,7 @@ export default class NavbarComponent extends Component {
     return (
       <Navbar className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <Container>
-          <NavbarBrand to="/">
+          <NavbarBrand href="/">
             <img src={Logo} alt="Logo" height={30} />
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />

@@ -11,7 +11,7 @@ export default class NavComponent extends Component {
           <NavLink url="/" children="Home" />
         </NavItem>
         <NavItem className="mx-3">
-          <NavLink url="/agendar" children="Schedule" />
+          <NavLink url="/agendamento" children="Agendamento" />
         </NavItem>
         <NavItem>
           <Button color="info" url="/login" children="Entrar" outline />
