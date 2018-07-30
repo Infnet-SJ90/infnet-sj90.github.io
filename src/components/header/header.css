@@ -10,9 +10,8 @@
 
 .carousel-item.active {
   background-image: url("../../assets/images/estera_separadora_entulho_geresol_P-10G.jpg");
-  background-color: #201350;
-  background-blend-mode: multiply;
-  filter: brightness(140%);
+  background-color: #e4e2ea;
+  background-blend-mode: soft-light;
 }
 
 .carousel-caption {

@@ -1,21 +1,23 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
-import store, { history } from './app.store';
+import { AppContainer } from 'react-hot-loader';
 import App from './containers/app';
-import registerServiceWorker from './app.serviceWorker';
 import './index.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
-const target = document.querySelector('#root');
+const renderApp = NextApp => {
+  render(
+    <AppContainer>
+      <NextApp />
+    </AppContainer>,
+    document.querySelector('[data-js="app"]')
+  );
+};
 
-render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <App />
-    </ConnectedRouter>
-  </Provider>,
-  target
-);
-registerServiceWorker();
+renderApp(App);
+
+if (module.hot) {
+  module.hot.accept('./containers/app', () => {
+    const NextApp = require('./containers/app').default;
+    renderApp(NextApp);
+  });
+}
