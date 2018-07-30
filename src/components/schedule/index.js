@@ -23,30 +23,20 @@ export default class ScheduleComponent extends Component {
       TYPED: 'Classe D: Resíduos perigosos, tais como tintas, solventes, óleos e outros, ou aqueles contaminados oriundos de obras em clínicas radiológicas, hospitais, instalações, industriais, etc.'
     };
 
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({dateValue: event.target.dateValue,
-      timeValue: event.target.timeValue,
-      addressValue: event.target.addressValue,
-      addressNumberValue: event.target.addressNumberValue,
-      neighborhoodValue: event.target.neighborhoodValue,
-      zipcodeValue: event.target.zipcodeValue,
-      typeValue: event.target.typeValue});
   }
 
   handleSubmit(event) {
     alert('Coleta Cadastrada');
-    console.log(this.state.dateValue,
-      this.state.timeValue,
-      this.state.addressValue,
-      this.state.addressNumberValue,
-      this.state.neighborhoodValue,
-      this.state.zipcodeValue,
-      this.state.typeValue);
     event.preventDefault();
+    console.log(this.refs.dateValue.value,
+      this.refs.timeValue.value,
+      this.refs.addressValue.value,
+      this.refs.addressNumberValue.value,
+      this.refs.neighborhoodValue.value,
+      this.refs.zipcodeValue.value,
+      this.refs.typeValue.value);
+
   }
 
   render() {
@@ -56,25 +46,24 @@ export default class ScheduleComponent extends Component {
           <h1>Agendamento</h1>
           <form onSubmit={this.handleSubmit}>
             <label>Data:</label>
-            <input type="date" value={this.state.dateValue} onChange={this.handleChange}/>
+            <input type="date" ref="dateValue"/>
 
             <label>Horário:</label>
-            <input type="time" value={this.state.timeValue} onChange={this.handleChange}/>
+            <input type="time" ref="timeValue"/>
 
             <label>Endereço:</label>
-            <input type="text" value={this.state.addressValue} onChange={this.handleChange}/>
+            <input type="text" ref="addressValue"/>
 
             <label>Número:</label>
-            <input type="number" value={this.state.addressNumberValue} onChange={this.handleChange}/>
+            <input type="number" ref="addressNumberValue"/>
 
             <label>Bairro:</label>
-            <input type="text" value={this.state.
-              neighborhoodValue} onChange={this.handleChange}/>
+            <input type="text" ref="neighborhoodValue"/>
 
             <label>CEP:</label>
-            <input type="number" value={this.state.zipcodeValue} onChange={this.handleChange}/>
+            <input type="number" ref="zipcodeValue"/>
 
-            <select value={this.state.typeValue} onChange={this.handleChange}>
+            <select ref="typeValue">
               <option value="classA">Classe A: Alvenarias, concreto, argamassas e solos - podem ser reutilizados na forma de agregados</option>
               <option value="classB">Classe B: Restos de madeira, metal, plástico, papel, papelão, gesso, vidros - podem ser reutilizados no próprio canteiro de obra ou encaminhados para reciclagem</option>
               <option  value="classC">Classe C: Resíduos sem tecnologia para reciclagem</option>
