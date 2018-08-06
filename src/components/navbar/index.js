@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Logo from '../../assets/images/logo.png';
 import Nav from '../nav';
-import NavLink from '../nav-link';
 import {
   Navbar,
   Container,
@@ -9,6 +8,7 @@ import {
   NavbarBrand,
   Collapse
 } from 'reactstrap';
+import './style.css';
 
 export default class NavbarComponent extends Component {
   state = {};
@@ -22,8 +22,13 @@ export default class NavbarComponent extends Component {
   };
 
   render() {
+    const { fixed } = this.props;
+    const fixedTop = fixed ? 'fixed-top' : null;
+
     return (
-      <Navbar className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <Navbar
+        className={`navbar navbar-expand-lg navbar-light bg-light ${fixedTop}`}
+      >
         <Container>
           <NavbarBrand href="/">
             <img src={Logo} alt="Logo" height={30} />

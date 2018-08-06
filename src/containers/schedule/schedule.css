@@ -1,16 +1,12 @@
-.half-screen {
-  margin-top: 10%;
-}
-
-.form-group {
-  width: 40%;
-}
-
-.form-group h1 {
-  color: #201350 !important;
-}
-
-.form-group label {
-  padding-right: 5px;
-  font-weight: bold;
+.background {
+  background-image: url("../../assets/images/estera_separadora_entulho_geresol_P-10G.jpg");
+  background-color: #000000;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: luminosity;
+  margin-left: 7%;
+  border: 5px solid #f8f9fa;
+  margin-top: -7px;
+  opacity: 0.5;
+  z-index: -1;
 }

@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import Button from '../button';
-import './header.css';
+import Title from '../title';
+import './style.css';
 
-export default class Header extends Component {
-  render() {
-    return (
-      <header>
-        <div className="carousel-item active">
-          <div className="carousel-caption">
-            <h1>Seja bem vindo!</h1>
-            <h3>Faça já o recolhimento de seu entulho.</h3>
-            <Button color="success" url="/login" children="Acesse Já" block />
-          </div>
-        </div>
-      </header>
-    );
-  }
-}
+export default ({}) => (
+  <header>
+    <div className="carousel-item active">
+      <div className="carousel-caption">
+        <Title size={1}>Seja bem vindo!</Title>
+        <Title size={3}>Faça já o recolhimento de seu entulho.</Title>
+        <Button color="success" url="/login" children="Acesse Já" block />
+      </div>
+    </div>
+  </header>
+);

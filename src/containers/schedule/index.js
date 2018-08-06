@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
 import Navbar from '../../components/navbar';
+import FormGroup from '../../components/form-group';
+import Select from '../../components/select';
+import Card from '../../components/card';
+import Row from '../../components/row';
+import Grid from '../../components/grid';
+import View from '../../components/view';
+import Button from '../../components/button';
+import Title from '../../components/title';
+import { Form } from 'reactstrap';
 import './schedule.css';
 
 export default class ScheduleComponent extends Component {
@@ -17,84 +26,94 @@ export default class ScheduleComponent extends Component {
     };
 
     const typeOfRubble = {
-      TYPEA:
-        'Classe A: Alvenarias, concreto, argamassas e solos - podem ser reutilizados na forma de agregados',
-      TYPEB:
-        'Classe B: Restos de madeira, metal, plástico, papel, papelão, gesso, vidros - podem ser reutilizados no próprio canteiro de obra ou encaminhados para reciclagem',
-      TYPEC: 'Classe C: Classe C: Resíduos sem tecnologia para reciclagem',
-      TYPED:
-        'Classe D: Resíduos perigosos, tais como tintas, solventes, óleos e outros, ou aqueles contaminados oriundos de obras em clínicas radiológicas, hospitais, instalações, industriais, etc.'
+      TYPEA: 'A',
+      TYPEB: 'B',
+      TYPEC: 'C',
+      TYPED: 'D'
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(event) {
-    alert('Coleta Cadastrada');
     event.preventDefault();
-    console.log(
-      this.refs.dateValue.value,
-      this.refs.timeValue.value,
-      this.refs.addressValue.value,
-      this.refs.addressNumberValue.value,
-      this.refs.neighborhoodValue.value,
-      this.refs.zipcodeValue.value,
-      this.refs.typeValue.value
-    );
+    console.log(this.refs.data.value);
   }
 
   render() {
     return (
-      <div className="Schedule">
+      <View>
         <Navbar />
-
-        <div className="half-screen">
-          <div className="form-group">
-            <h1>Agendamento</h1>
-            <form onSubmit={this.handleSubmit}>
-              <label>Data:</label>
-              <input type="date" ref="dateValue" />
-
-              <label>Horário:</label>
-              <input type="time" ref="timeValue" />
-
-              <label>Endereço:</label>
-              <input type="text" ref="addressValue" />
-
-              <label>Número:</label>
-              <input type="number" ref="addressNumberValue" />
-
-              <label>Bairro:</label>
-              <input type="text" ref="neighborhoodValue" />
-
-              <label>CEP:</label>
-              <input type="number" ref="zipcodeValue" />
-
-              <select ref="typeValue">
-                <option value="classA">
-                  Classe A: Alvenarias, concreto, argamassas e solos - podem ser
-                  reutilizados na forma de agregados
-                </option>
-                <option value="classB">
-                  Classe B: Restos de madeira, metal, plástico, papel, papelão,
-                  gesso, vidros - podem ser reutilizados no próprio canteiro de
-                  obra ou encaminhados para reciclagem
-                </option>
-                <option value="classC">
-                  Classe C: Resíduos sem tecnologia para reciclagem
-                </option>
-                <option value="classD">
-                  Classe D: Resíduos perigosos, tais como tintas, solventes,
-                  óleos e outros, ou aqueles contaminados oriundos de obras em
-                  clínicas radiológicas, hospitais, instalações, industriais,
-                  etc.
-                </option>
-              </select>
-              <input type="submit" value="Submit" />
-            </form>
-          </div>
-        </div>
-      </div>
+        <Grid>
+          <View className="col-lg-8">
+            <Title className="my-4" size={2}>
+              Realizar Agendamento
+            </Title>
+            <Form onSubmit={this.handleSubmit}>
+              <Row>
+                <FormGroup label="Data" type="date" ref="data" />
+                <FormGroup label="Horário" type="time" ref="timeValue" />
+              </Row>
+              <FormGroup
+                label="Endereço"
+                type="text"
+                placeholder="Endereço"
+                ref="addressValue"
+              />
+              <Row>
+                <FormGroup
+                  label="Número"
+                  type="number"
+                  placeholder="Número"
+                  ref="addressNumberValue"
+                />
+                <FormGroup
+                  label="Bairro"
+                  type="text"
+                  placeholder="Bairro"
+                  ref="neighborhoodValue"
+                />
+                <FormGroup
+                  label="CEP"
+                  type="text"
+                  placeholder="00000-000"
+                  ref="zipcodeValue"
+                />
+              </Row>
+              <Select label="Tipo de Entulho" ref="typeValue">
+                <option>Selecione...</option>
+                <option value="classA">Classe A</option>
+                <option value="classB">Classe B</option>
+                <option value="classC">Classe C</option>
+                <option value="classD">Classe D</option>
+              </Select>
+              <Card className="my-4 decorative">
+                <strong>Classe A:</strong> Alvenarias, concreto, argamassas e
+                solos - podem ser reutilizados na forma de agregados.
+                <br />
+                <strong>Classe B:</strong> Restos de madeira, metal, plástico,
+                papel, papelão, gesso, vidros - podem ser reutilizados no
+                próprio canteiro de obra ou encaminhados para reciclagem.
+                <br />
+                <strong>Classe C:</strong> Resíduos sem tecnologia para
+                reciclagem. <br />
+                <strong>Classe D:</strong> Resíduos perigosos, tais como tintas,
+                solventes, óleos e outros, ou aqueles contaminados oriundos de
+                obras em clínicas radiológicas, hospitais, instalações,
+                industriais, etc.
+                <br />
+              </Card>
+              <Button
+                type="submit"
+                color="success"
+                children="Realizar Agendamento"
+                block
+              />
+            </Form>
+          </View>
+          <View className="offset-1 col-3 d-none d-lg-block d-xl-block background" />
+        </Grid>
+      </View>
     );
   }
 }

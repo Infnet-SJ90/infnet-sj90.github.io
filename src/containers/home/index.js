@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import Navbar from '../../components/navbar';
 import Header from '../../components/header';
+import View from '../../components/view';
 
 export default class Home extends Component {
   render() {
     return (
-      <div className="Home">
-        <Navbar />
+      <View>
+        <Navbar fixed />
         <Header />
-      </div>
+      </View>
     );
   }
 }
