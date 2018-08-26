@@ -50,7 +50,7 @@ module.exports = {
 
   cssLoader: {
     test: /\.css$/,
-    include: paths.src,
+    include: [paths.src, /node_modules/],
     use: ['style-loader', 'css-loader', 'sass-loader']
   },
 
