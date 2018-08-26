@@ -25,7 +25,7 @@ export default class ScheduleComponent extends Component {
       typeValue: ''
     };
 
-    const typeOfRubble = {
+    this.typeOfRubble = {
       TYPEA: 'A',
       TYPEB: 'B',
       TYPEC: 'C',
@@ -35,9 +35,12 @@ export default class ScheduleComponent extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    console.log(this.refs.data.value);
+  handleChange = (field) => (e) => {
+    this.setState({[field]: e.target.value});
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
   }
 
   render() {
@@ -51,41 +54,55 @@ export default class ScheduleComponent extends Component {
             </Title>
             <Form onSubmit={this.handleSubmit}>
               <Row>
-                <FormGroup label="Data" type="date" ref="data" />
-                <FormGroup label="Horário" type="time" ref="timeValue" />
+                <FormGroup 
+                  label="Data" 
+                  type="date" 
+                  value={this.state.dateValue} 
+                  onChange={this.handleChange('dateValue')} 
+                />
+                <FormGroup 
+                  label="Horário" 
+                  type="time" 
+                  value={this.state.timeValue} 
+                  onChange={this.handleChange('timeValue')} 
+                />
               </Row>
-              <FormGroup
-                label="Endereço"
-                type="text"
+              <FormGroup 
+                label="Endereço" 
+                type="text" 
                 placeholder="Endereço"
-                ref="addressValue"
+                value={this.state.addressValue} 
+                onChange={this.handleChange('addressValue')} 
               />
               <Row>
-                <FormGroup
-                  label="Número"
-                  type="number"
+                <FormGroup 
+                  label="Número" 
+                  type="number" 
                   placeholder="Número"
-                  ref="addressNumberValue"
+                  value={this.state.addressNumberValue} 
+                  onChange={this.handleChange('addressNumberValue')} 
                 />
-                <FormGroup
-                  label="Bairro"
-                  type="text"
+                <FormGroup 
+                  label="Bairro" 
+                  type="text" 
                   placeholder="Bairro"
-                  ref="neighborhoodValue"
+                  value={this.state.neighborhoodValue} 
+                  onChange={this.handleChange('neighborhoodValue')} 
                 />
-                <FormGroup
-                  label="CEP"
-                  type="text"
+                <FormGroup 
+                  label="CEP" 
+                  type="text" 
                   placeholder="00000-000"
-                  ref="zipcodeValue"
+                  value={this.state.zipcodeValue} 
+                  onChange={this.handleChange('zipcodeValue')} 
                 />
               </Row>
-              <Select label="Tipo de Entulho" ref="typeValue">
-                <option>Selecione...</option>
-                <option value="classA">Classe A</option>
-                <option value="classB">Classe B</option>
-                <option value="classC">Classe C</option>
-                <option value="classD">Classe D</option>
+              <Select label="Tipo de Entulho" onChange={this.handleChange('typeValue')}>
+                <option value="">Selecione...</option>
+                <option value={this.typeOfRubble.TYPEA}>Classe A</option>
+                <option value={this.typeOfRubble.TYPEB}>Classe B</option>
+                <option value={this.typeOfRubble.TYPEC}>Classe C</option>
+                <option value={this.typeOfRubble.TYPED}>Classe D</option>
               </Select>
               <Card className="my-4 decorative">
                 <strong>Classe A:</strong> Alvenarias, concreto, argamassas e
