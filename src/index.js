@@ -14,10 +14,3 @@ const renderApp = NextApp => {
 };
 
 renderApp(App);
-
-if (module.hot) {
-  module.hot.accept('./containers/app', () => {
-    const NextApp = require('./containers/app').default;
-    renderApp(NextApp);
-  });
-}
