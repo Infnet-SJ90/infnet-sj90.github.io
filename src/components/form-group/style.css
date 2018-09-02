@@ -5,15 +5,20 @@
 
 
 .form-left {
-  top: 50%;
-  right: 50%;  
-  background-color:#FF0;
-  bottom: 50%;
+width:20%;
+margin-top: 5%;
+margin-left: 35%;
+float: left;
+
+border-right: 1px solid black;
+text-align: center;
 }
 
 .form-right {  
-  top: 50%;
-  left: 50%;  
-  bottom: 50%;
-  background-color:#F00;
+  width:20%;
+  float: left; 
+  text-align: center;
+    
+  margin-top: 5%;
+  margin-left: 1%;
 }
