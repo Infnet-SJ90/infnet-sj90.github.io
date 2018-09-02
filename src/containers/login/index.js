@@ -39,7 +39,7 @@ export default class Login extends Component {
 		return (
 			<View>
 			<Navbar />
-			<div>
+			<div class="form-left">
 			<Grid>
 			<View className="col-lg-8">
 			<Title className="my-4" size={2}>
@@ -85,7 +85,7 @@ export default class Login extends Component {
 			</Grid>
 			</div>
 
-			<div>
+			<div class="form-right">
 			<Grid>
 			<View className="col-lg-8">
 			<Title className="my-4" size={2}>
