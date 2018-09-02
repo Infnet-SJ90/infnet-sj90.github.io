@@ -9,7 +9,7 @@ import View from '../../components/view';
 import Button from '../../components/button';
 import Title from '../../components/title';
 import { Form } from 'reactstrap';
-//import FacebookComponent from '../../components/facebook';
+import FacebookComponent from '../../components/facebook';
 
 export default class Login extends Component {
 	constructor(props) {
@@ -81,6 +81,8 @@ export default class Login extends Component {
 			block
 			/>
 			</Form>
+			<p>ou</p>
+			<FacebookComponent />
 			</View>
 			</Grid>
 			</div>
@@ -112,7 +114,8 @@ export default class Login extends Component {
 			children="Login"
 			block
 			/>
-
+			<p>ou</p>
+			<FacebookComponent />
 			</Form>
 			</View>
 			</Grid>
