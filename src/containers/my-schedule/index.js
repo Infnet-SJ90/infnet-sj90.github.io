@@ -7,7 +7,7 @@ export default class MySchedule extends Component {
     return (
       <View>
         <Navbar />
-        <p>Página dos Meus Agendamentos</p>
+        <h2>Meus Agendamentos</h2>
       </View>
     );
   }
