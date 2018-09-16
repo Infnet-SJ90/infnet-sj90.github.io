@@ -55,17 +55,19 @@
     "precss": "^3.1.2",
     "prop-types": "^15.5.10",
     "react": "^16.4.2",
+    "react-chat-widget": "^2.1.4-1",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "sass-loader": "^7.0.3"
+    "sass-loader": "^7.0.3",
+    "webpack-cli": "^3.1.0"
   },
   "scripts": {
     "start": "node server.js",
     "test": "jest --coverage -u",
     "test:watch": "yarn test -- --watch",
-    "build": "cross-env NODE_ENV=production BABEL_ENV=production webpack --progress --config webpack/prod.config -p",
+    "build": "cross-env webpack --progress --config webpack/dev.config -p",
     "build:analyzer": "cross-env ANALYZER=true yarn build"
   },
   "jest": {
