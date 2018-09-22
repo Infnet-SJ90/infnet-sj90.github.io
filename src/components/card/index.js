@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Card, CardText } from 'reactstrap';
+import { Card, CardText, CardBody } from 'reactstrap';
 import './style.css';
 
 export default ({ children, decorative, ...props }) => (
   <Card {...props}>
-    <CardText>{children}</CardText>
+    {decorative && <CardText className="decorative">{children}</CardText>}
+    {!decorative && <CardBody>{children}</CardBody>}
   </Card>
 );

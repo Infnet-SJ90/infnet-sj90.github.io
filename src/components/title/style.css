@@ -15,3 +15,17 @@ h3 {
   font-weight: 300 !important;
   font-size: 23px !important;
 }
+
+.paragraph {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  line-height: 0.1em;
+}
+
+.span {
+  background: #f1f1f1;
+  padding: 0 10px;
+}

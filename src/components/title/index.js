@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './style.css';
 
-export default ({ size, children, ...props }) => {
+export default ({ size, decorative, children, ...props }) => {
   switch (size) {
   case 1:
     return <h1 {...props}>{children}</h1>;
@@ -16,6 +16,13 @@ export default ({ size, children, ...props }) => {
   case 6:
     return <h6 {...props}>{children}</h6>;
   default:
+    if (decorative) {
+      return (
+        <p className="paragraph">
+          <span className="span">{children}</span>
+        </p>
+      );
+    }
     return <h6 {...props}>{children}</h6>;
   }
 };
