@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Navbar from '../../components/navbar';
 import View from '../../components/view';
-import { Card, CardHeader, CardBody, CardFooter } from "react-simple-card";
 import Title from '../../components/title';
 import Grid from '../../components/grid';
+import Card from '../../components/card';
 import Row from '../../components/row';
+import { Badge } from 'reactstrap';
 
 export default class MySchedule extends Component {
   render() {
@@ -12,20 +13,32 @@ export default class MySchedule extends Component {
       <View>
         <Navbar />
         <Grid>
-        <View className="col-lg-8">
+          <View className="col-lg-12 mt-5">
             <Title className="my-4" size={2}>
               Meus Agendamentos
             </Title>
-        </View>    
+            <Row>
+              <Card>
+                <Badge color="danger">Cancelado</Badge>
+                <Title size={4}>Protocolo: #545654</Title>
+                <strong>Data:</strong> 12/21/1978
+                <br />
+                <strong>Local:</strong> Avenida João Gomes, 1452 - Centro
+                <br />
+                <strong>Tipo de Entulho:</strong> Classe A
+              </Card>
+              <Card>
+                <Badge color="success">Realizado</Badge>
+                <Title size={4}>Protocolo: #545654</Title>
+                <strong>Data:</strong> 12/21/1978
+                <br />
+                <strong>Local:</strong> Avenida João Gomes, 1452 - Centro
+                <br />
+                <strong>Tipo de Entulho:</strong> Classe A
+              </Card>
+            </Row>
+          </View>
         </Grid>
-        <Card style={{width: '30%', marginLeft: '20%'}}>
-          <CardHeader style={{backgroundColor: '#a2c515'}}><b>Protocolo:</b></CardHeader>         
-          <CardBody>
-          <p><b>Data:</b></p>
-          <p><b>Local:</b></p>
-          <p><b>Tipo de Entulho:</b></p>          
-          </CardBody>          
-        </Card>
       </View>
     );
   }
