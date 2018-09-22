@@ -1,10 +1,11 @@
 .card {
   border: 0;
   border-radius: 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .decorative {
   background-color: #e6e6e6;
   padding: 20px 39px;
+  font-size: 14px;
 }
