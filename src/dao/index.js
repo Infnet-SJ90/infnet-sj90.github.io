@@ -1,5 +1,27 @@
 import React from 'react';
 import axios from 'axios';
+import constants from 'constants';
+
+export default class AuthDao{
+ method: 'POST',
+    url: Constants.global.daoUrlBaseAuth,
+    data: qs.stringify(data),
+    headers: {
+        'Authorization': 'Basic Y2xpZW50OnNlY3JldA==',
+        'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    json: true
+  };
+  return dispatch => {
+    return axios(authOptions)
+    .then(function(response){
+      console.log(response.data);
+      console.log(response.status);
+    })
+    .catch(function(error){
+      console.log(error);
+    });
+}
 
 export default class ScheduleDao{
   state = {
