@@ -27,20 +27,14 @@ export default class FacebookComponent extends Component {
   render() {
     let fbContent;
 
-    if (this.state.isLoggedIn) {
-      console.log(this.state.email);
-    } else {
-      fbContent = (
-        <FacebookLogin
-          appId="268965717063816"
-          autoLoad={true}
-          fields="name,email"
-          onClick={this.componentClicked}
-          callback={this.responseFacebook}
-        />
-      );
-    }
-
-    return fbContent;
+    return (
+      <FacebookLogin
+        appId="268965717063816"
+        autoLoad={true}
+        fields="name,email"
+        onClick={this.componentClicked}
+        callback={this.responseFacebook}
+      />
+    );
   }
 }
